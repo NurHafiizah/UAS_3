@@ -1,7 +1,7 @@
 <?php
 
 class Wisata {
-    public $nama;
+    public $nama; //properti gunanya untuk menyimpan nama wisata
     public $lokasi;
     public $deskripsi;
     public $fasilitas;
@@ -12,7 +12,7 @@ class Wisata {
     
 
     public function __construct($nama, $lokasi, $deskripsi, $fasilitas, $harga, $aktivitas, $gambar) {
-        $this->nama = $nama;
+        $this->nama = $nama; //properti objek 
         $this->lokasi = $lokasi;
         $this->deskripsi = $deskripsi;
         $this->fasilitas = $fasilitas;
@@ -35,19 +35,19 @@ class MesinPencarianTabel extends Wisata {
         $this->namaTabel = $namaTabel;
     }
 
-    public function cariSemua() {
+    public function cariSemua() { //method untuk melakukan pencarian dari tabel
         $hasilPencarian = array();
 
         $sql = "SELECT * FROM $this->namaTabel LIMIT 3";
-        $result = $this->koneksi->query($sql);
+        $result = $this->koneksi->query($sql);//memanggil properti koneksi untuk menjalankan query nya
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $hasilPencarian[] = new Wisata($row['nama'], $row['lokasi'], $row['deskripsi'], $row['fasilitas'], $row['harga'], $row['aktivitas'], $row['gambar']);
-            }
+            }//melakukan literasi membuat objek wisata untuk setiap baris
         }
 
-        return $hasilPencarian;
+        return $hasilPencarian;//kembali ke array yang muat objek wisata
     }
 }
 
