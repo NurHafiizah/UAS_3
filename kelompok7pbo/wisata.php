@@ -96,7 +96,7 @@ class ResultRenderer {
             echo '<h4>' . $wisata->nama . '</h4>';
             echo '</a>';
             echo '<ul class="rate">';
-            // ... (tambahkan bintang sesuai rating)
+            // ... (tambahkan bintang sesuai ratingnya)
             echo '<li>(100) Reviews</li>';
             echo '</ul>';
             echo '<span class="price">';
