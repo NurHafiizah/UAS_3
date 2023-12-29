@@ -1,5 +1,5 @@
 <?php
-
+//override terjadi ketika kelas anak mengimplementasikan ulang suatu metode yang sudah didefinisikan di kelas induk. Namun, dalam kode ini, tidak ada metode khusus dari kelas Wisata yang di-override dalam kedua kelas turunan.
 class Wisata {
     public $nama; //properti gunanya untuk menyimpan nama wisata
     public $lokasi;
@@ -76,6 +76,27 @@ class SearchEngine extends Wisata {
         return $resultList;
     }
 }
+class cari {
+    private $conn;
+
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
+
+    public function getConn() {
+        return $this->conn;
+    }
+}
+class ResultRenderer {
+    public function render() {
+    }
+}
+class CustomResultRenderer extends ResultRenderer {
+    public function render() {
+    }
+}
+
+
 
 class ResultRenderer {
     private $wisataList;
